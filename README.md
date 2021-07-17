@@ -8,7 +8,7 @@ A simple calculator written in vanilla JavaScript and HTML, using UIkit for the 
 
 ## Deployed
 
-[https://ghall89.github.io/calculator/](https://ghall89.github.io/calculator/)
+[https://ghall89.github.io/js-calc/](https://ghall89.github.io/js-calc/)
 
 ## Known Issues
 

@@ -21,23 +21,23 @@ const handleOperator = operator => {
 
 document.body.addEventListener('click', e => {
 	if (e.target.tagName === 'BUTTON') {
-		if (e.target.id == '=') {
-			handleOperator(e.target.id);
-		} else if (e.target.id == '+') {
-			handleOperator(e.target.id);
-		} else if (e.target.id == '-') {
-			handleOperator(e.target.id);
-		} else if (e.target.id == '*') {
-			handleOperator(e.target.id);
-		} else if (e.target.id == '/') {
-			handleOperator(e.target.id);
-		} else {
-			// prevent more than one decimal point
-			if (displayArr.includes('.') && e.target.id == '.') {
-				return;
-			}
-			displayArr.push(e.target.id);
-			display.value = displayArr.join('');
+		switch (e.target.id) {
+			case '=':
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+				handleOperator(e.target.id);
+				break;
+			default:
+				if (displayArr.includes('.') && e.target.id === '.') {
+					return;
+				} else if (e.target.id === '.' && displayArr.length === 0) {
+					displayArr.push('0');
+				}
+				displayArr.push(e.target.id);
+				display.value = displayArr.join('');
+				break;
 		}
 	}
 });

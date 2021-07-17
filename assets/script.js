@@ -3,20 +3,25 @@ let displayArr = [];
 let formula = [];
 
 const handleOperator = operator => {
-	formula.push(displayArr.join(''));
+	// stop function if display is blank or formula is incomplete
+	if (!display.value) {
+		return;
+	}
+
+	formula.push(display.value);
 	displayArr = [];
+	display.value = '';
 	if (operator == '=') {
-		console.log(formula);
+		display.value = eval(formula.join(''));
+		formula = [];
 	} else {
 		formula.push(operator);
-		console.log(formula);
+		eval(formula.join(''));
 	}
-	display.value = displayArr.join('');
 	console.log(`You clicked ${operator}`);
 };
 
 const calculateArr = document.body.addEventListener('click', e => {
-	console.log(e.target.tagName);
 	if (e.target.tagName === 'BUTTON') {
 		if (e.target.id == '=') {
 			handleOperator(e.target.id);

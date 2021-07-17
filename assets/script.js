@@ -10,7 +10,6 @@ const handleOperator = operator => {
 
 	formula.push(display.value);
 	displayArr = [];
-	display.value = '';
 	if (operator == '=') {
 		display.value = eval(formula.join(''));
 		formula = [];
@@ -18,10 +17,9 @@ const handleOperator = operator => {
 		formula.push(operator);
 		eval(formula.join(''));
 	}
-	console.log(`You clicked ${operator}`);
 };
 
-const calculateArr = document.body.addEventListener('click', e => {
+document.body.addEventListener('click', e => {
 	if (e.target.tagName === 'BUTTON') {
 		if (e.target.id == '=') {
 			handleOperator(e.target.id);
@@ -34,6 +32,10 @@ const calculateArr = document.body.addEventListener('click', e => {
 		} else if (e.target.id == '/') {
 			handleOperator(e.target.id);
 		} else {
+			// prevent more than one decimal point
+			if (displayArr.includes('.') && e.target.id == '.') {
+				return;
+			}
 			displayArr.push(e.target.id);
 			display.value = displayArr.join('');
 		}

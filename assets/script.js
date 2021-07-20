@@ -4,39 +4,43 @@ let formula = [];
 
 const handleOperator = operator => {
 	// stop function if display is blank or formula is incomplete
-	if (!display.value) {
-		return;
-	}
+	// if (!display.innerText) {
+	// 	return;
+	// }
 
-	formula.push(display.value);
+	formula.push(display.innerText);
 	displayArr = [];
-	if (operator == '=') {
-		display.value = eval(formula.join(''));
+	if (operator === '=') {
+		display.innerText = eval(formula.join(''));
 		formula = [];
 	} else {
 		formula.push(operator);
-		eval(formula.join(''));
 	}
 };
 
 document.body.addEventListener('click', e => {
 	if (e.target.tagName === 'BUTTON') {
-		switch (e.target.id) {
+		switch (e.target.innerText) {
+			case 'C':
+				formula = [];
+				displayArr = [];
+				display.innerText = '0';
+				break;
 			case '=':
 			case '+':
 			case '-':
 			case '*':
 			case '/':
-				handleOperator(e.target.id);
+				handleOperator(e.target.innerText);
 				break;
 			default:
-				if (displayArr.includes('.') && e.target.id === '.') {
+				if (displayArr.includes('.') && e.target.innerText === '.') {
 					return;
-				} else if (e.target.id === '.' && displayArr.length === 0) {
+				} else if (e.target.innerText === '.' && displayArr.length === 0) {
 					displayArr.push('0');
 				}
-				displayArr.push(e.target.id);
-				display.value = displayArr.join('');
+				displayArr.push(e.target.innerText);
+				display.innerText = displayArr.join('');
 				break;
 		}
 	}

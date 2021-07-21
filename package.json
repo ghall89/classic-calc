@@ -1,0 +1,23 @@
+{
+	"name": "Classic-Calculator",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"build": {
+		"appId": "com.ghall.calculator",
+		"productName": "Classic Calculator"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron .",
+		"build": "electron-builder"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"electron": "^12.0.7",
+		"electron-builder": "^22.11.7"
+	}
+}

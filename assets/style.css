@@ -1,5 +1,7 @@
 body {
-	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
 }
 
 button {
@@ -32,8 +34,9 @@ button:active {
 
 .window-chrome {
 	background: black;
+	-webkit-app-region: drag;
 	width: 150px;
-	padding-top: 24px;
+	padding-top: 36px;
 	border-radius: 10px;
 	box-shadow: 2px 2px 0px 0px #000000ff;
 }
@@ -41,6 +44,7 @@ button:active {
 .calc-body {
 	display: inline-grid;
 	background: grey;
+	-webkit-app-region: no-drag;
 	padding: 10px;
 	border: 1px solid black;
 	border-radius: 10px;

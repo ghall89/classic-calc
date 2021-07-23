@@ -16,4 +16,4 @@ _Note: This project is only set up to compile for MacOS. If you want to compile 
 
 ## Compiled
 
-⏳ Coming soon!
+[Releases](https://github.com/ghall89/js-calc/releases/tag/v0.0.1)

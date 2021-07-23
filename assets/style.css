@@ -9,7 +9,7 @@ button {
 	border-radius: 0;
 	border: 1px solid black;
 	outline: none;
-	box-shadow: 4px 4px 0px 0px #000000ff;
+	box-shadow: 3px 3px 0px 0px #000000ff;
 	height: 24px;
 	width: 24px;
 	margin: 4px 2px;
@@ -23,10 +23,12 @@ button:active {
 .wide-btn {
 	width: 56px;
 	grid-column: 1 / span 2;
+	text-align: left;
 }
 
 .tall-btn {
 	height: 56px;
+	padding-top: 35px;
 	display: inline;
 	grid-column: 4;
 	grid-row: 5 / span 2;
@@ -37,7 +39,6 @@ button:active {
 	-webkit-app-region: drag;
 	width: 150px;
 	padding-top: 36px;
-	border-radius: 10px;
 	box-shadow: 2px 2px 0px 0px #000000ff;
 }
 
@@ -57,6 +58,8 @@ button:active {
 	font-family: sans-serif;
 	text-align: right;
 	max-height: 24px;
+	max-width: 127px;
+	overflow: scroll;
 	margin-bottom: 8px;
 	padding: 6px;
 	grid-column: 1 / span 4;

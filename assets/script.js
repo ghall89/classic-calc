@@ -3,15 +3,16 @@ let displayArr = [];
 let formula = [];
 
 const handleOperator = operator => {
-	// stop function if display is blank or formula is incomplete
-	// if (!display.innerText) {
-	// 	return;
-	// }
-
-	formula.push(display.innerText);
+	if (displayArr.length > 0) {
+		formula.push(displayArr.join(''));
+	} else {
+		formula.pop();
+	}
 	displayArr = [];
 	if (operator === '=') {
-		display.innerText = eval(formula.join(''));
+		const result = eval(formula.join(''));
+		display.innerText = result;
+		displayArr = [result];
 		formula = [];
 	} else {
 		formula.push(operator);

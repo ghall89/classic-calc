@@ -10,45 +10,79 @@ const handleOperator = operator => {
 	}
 	displayArr = [];
 	if (operator === '=') {
+		if (formula.length <= 2) {
+			return;
+		}
 		const result = eval(formula.join(''));
 		display.innerText = result;
-		displayArr = [result];
+		displayArr = [];
 		formula = [];
 	} else {
 		formula.push(operator);
 	}
 };
 
+const handleInput = input => {
+	console.log(input);
+
+	switch (input) {
+		case 'C':
+			formula = [];
+			displayArr = [];
+			display.innerText = '0';
+			break;
+		case '=':
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+			handleOperator(input);
+			break;
+		default:
+			if (displayArr.includes('.') && input === '.') {
+				return;
+			} else if (input === '.' && displayArr.length === 0) {
+				displayArr.push('0');
+			}
+			displayArr.push(input);
+			display.innerText = displayArr.join('');
+			break;
+	}
+};
+
 document.body.addEventListener('click', e => {
 	if (e.target.tagName === 'BUTTON') {
-		switch (e.target.innerText) {
-			case 'C':
-				formula = [];
-				displayArr = [];
-				display.innerText = '0';
-				break;
-			case '=':
-			case '+':
-			case '-':
-			case '*':
-			case '/':
-				handleOperator(e.target.innerText);
-				break;
-			default:
-				if (displayArr.includes('.') && e.target.innerText === '.') {
-					return;
-				} else if (e.target.innerText === '.' && displayArr.length === 0) {
-					displayArr.push('0');
-				}
-				displayArr.push(e.target.innerText);
-				display.innerText = displayArr.join('');
-				break;
-		}
+		handleInput(e.target.innerText);
 	}
 });
 
-document.addEventListener('keypress', e => {
+document.addEventListener('keydown', e => {
 	console.log(e.key);
-	const button = document.getElementById(e.key);
-	console.log(button);
+	switch (e.key) {
+		case '1':
+		case '3':
+		case '2':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9':
+		case '0':
+		case '=':
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+			handleInput(e.key);
+			break;
+		case 'Backspace':
+			handleInput('c');
+			break;
+		case 'Enter':
+			handleInput('=');
+			break;
+		default:
+			break;
+	}
 });

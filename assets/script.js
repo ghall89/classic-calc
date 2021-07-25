@@ -46,3 +46,9 @@ document.body.addEventListener('click', e => {
 		}
 	}
 });
+
+document.addEventListener('keypress', e => {
+	console.log(e.key);
+	const button = document.getElementById(e.key);
+	console.log(button);
+});

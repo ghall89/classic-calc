@@ -1,6 +1,7 @@
 const display = document.querySelector('#display');
 let displayArr = [];
 let formula = [];
+let keyPressed = false;
 
 const handleOperator = operator => {
 	if (displayArr.length > 0) {
@@ -57,32 +58,38 @@ document.body.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
-	console.log(e.key);
-	switch (e.key) {
-		case '1':
-		case '3':
-		case '2':
-		case '4':
-		case '5':
-		case '6':
-		case '7':
-		case '8':
-		case '9':
-		case '0':
-		case '=':
-		case '+':
-		case '-':
-		case '*':
-		case '/':
-			handleInput(e.key);
-			break;
-		case 'Backspace':
-			handleInput('c');
-			break;
-		case 'Enter':
-			handleInput('=');
-			break;
-		default:
-			break;
+	if (!keyPressed) {
+		switch (e.key) {
+			case '1':
+			case '3':
+			case '2':
+			case '4':
+			case '5':
+			case '6':
+			case '7':
+			case '8':
+			case '9':
+			case '0':
+			case '=':
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+				handleInput(e.key);
+				break;
+			case 'Backspace':
+				handleInput('c');
+				break;
+			case 'Enter':
+				handleInput('=');
+				break;
+			default:
+				break;
+		}
+		keyPressed = true;
 	}
+});
+
+document.addEventListener('keyup', e => {
+	keyPressed = false;
 });

@@ -3,37 +3,61 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Window</title>
-		<link rel="stylesheet" href="./assets/style.css" />
+		<title>Classic Calculator</title>
+		<link rel="stylesheet" href="./assets/base.css" />
 	</head>
 	<body>
-		<div class="window-chrome">
-			<div class="calc-body">
-				<div id="display">0</div>
-
-				<button>C</button>
-				<button>=</button>
-				<button>/</button>
-				<button>*</button>
-
-				<button>7</button>
-				<button>8</button>
-				<button>9</button>
-				<button>-</button>
-
-				<button>4</button>
-				<button>5</button>
-				<button>6</button>
-				<button>+</button>
-
-				<button>1</button>
-				<button>2</button>
-				<button>3</button>
-				<button class="tall-btn">=</button>
-				<button class="wide-btn">0</button>
-				<button>.</button>
+		<body>
+			<div id="content" class="content">
+				<div class="control-box close-box">
+					<a class="control-box-inner"></a>
+				</div>
+				<div class="control-box zoom-box">
+					<div class="control-box-inner">
+						<div class="zoom-box-inner"></div>
+					</div>
+				</div>
+				<div class="control-box windowshade-box">
+					<div class="control-box-inner">
+						<div class="windowshade-box-inner"></div>
+					</div>
+				</div>
+				<h1 class="title">Classic Calculator</h1>
+				<div class="inner">
+					<p>
+						<class "s">In 1984, Apple released the original Macintosh. As part
+						of the system software, they shipped a collection of applications
+						called Desk Accessories.
+					</p>
+					<p>
+						One such Desk Accessory was a simple calculator. This calculator
+						stuck around more-or-less unchanged until Apple made the transition
+						to Mac OS X.
+					</p>
+					<p>
+						Classic Calculator is a tribute to this long-lived tool, made to run
+						on modern Intel and Apple Silicon Macs running MacOS Big Sur.
+					</p>
+					<div class="center">
+						<button
+							class="command_button"
+							onclick="window.location.href='https://github.com/ghall89/classic-calc/releases';"
+						>
+							Download
+						</button>
+						<p>
+							App created by
+							<a href="https://ghall.dev" target="_blank">Graham Hall</a>
+						</p>
+						<p>
+							Website built with
+							<a href="https://github.com/npjg/classic.css" target="_blank"
+								>classic.css</a
+							>
+						</p>
+					</div>
+				</div>
 			</div>
-		</div>
-		<script src="./assets/script.js"></script>
+		</body>
 	</body>
 </html>

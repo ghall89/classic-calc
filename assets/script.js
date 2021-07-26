@@ -78,7 +78,7 @@ document.addEventListener('keydown', e => {
 				handleInput(e.key);
 				break;
 			case 'Backspace':
-				handleInput('c');
+				handleInput('C');
 				break;
 			case 'Enter':
 				handleInput('=');

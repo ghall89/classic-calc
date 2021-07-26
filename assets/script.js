@@ -76,17 +76,19 @@ document.addEventListener('keydown', e => {
 			case '*':
 			case '/':
 				handleInput(e.key);
+				keyPressed = true;
 				break;
 			case 'Backspace':
 				handleInput('C');
+				keyPressed = true;
 				break;
 			case 'Enter':
 				handleInput('=');
+				keyPressed = true;
 				break;
 			default:
 				break;
 		}
-		keyPressed = true;
 	}
 });
 

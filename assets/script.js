@@ -2,6 +2,13 @@ const display = document.querySelector('#display');
 let displayArr = [];
 let formula = [];
 let keyPressed = false;
+let keyId = '';
+
+const handleButtonChange = (input, color, textColor) => {
+	const button = document.getElementById(input);
+	button.style.backgroundColor = color;
+	button.style.color = textColor;
+};
 
 const handleOperator = operator => {
 	if (displayArr.length > 0) {
@@ -16,7 +23,7 @@ const handleOperator = operator => {
 		}
 		const result = eval(formula.join(''));
 		display.innerText = result;
-		displayArr = [];
+		displayArr = [result];
 		formula = [];
 	} else {
 		formula.push(operator);
@@ -24,8 +31,6 @@ const handleOperator = operator => {
 };
 
 const handleInput = input => {
-	console.log(input);
-
 	switch (input) {
 		case 'C':
 			formula = [];
@@ -75,16 +80,26 @@ document.addEventListener('keydown', e => {
 			case '-':
 			case '*':
 			case '/':
-				handleInput(e.key);
+			case '.':
 				keyPressed = true;
+				keyId = e.key;
+				handleInput(e.key);
+				handleButtonChange(keyId, 'black', 'white');
+
 				break;
 			case 'Backspace':
-				handleInput('C');
 				keyPressed = true;
+				handleInput('C');
+				keyId = 'c';
+				handleButtonChange(keyId, 'black', 'white');
+
 				break;
 			case 'Enter':
-				handleInput('=');
 				keyPressed = true;
+				handleInput('=');
+				keyId = '=';
+				handleButtonChange(keyId, 'black', 'white');
+
 				break;
 			default:
 				break;
@@ -94,4 +109,5 @@ document.addEventListener('keydown', e => {
 
 document.addEventListener('keyup', e => {
 	keyPressed = false;
+	handleButtonChange(keyId, 'white', 'black');
 });

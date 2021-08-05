@@ -2,6 +2,7 @@ const display = document.querySelector('#display');
 let displayArr = [];
 let formula = [];
 let keyPressed = false;
+let resultDisplayed = false;
 let keyId = '';
 
 const handleButtonChange = (input, color, textColor) => {
@@ -22,6 +23,7 @@ const handleOperator = operator => {
 			return;
 		}
 		const result = eval(formula.join(''));
+		resultDisplayed = true;
 		display.innerText = result;
 		displayArr = [result];
 		formula = [];
@@ -45,6 +47,11 @@ const handleInput = input => {
 			handleOperator(input);
 			break;
 		default:
+			if (resultDisplayed) {
+				displayArr = [];
+				display.innerText = '0';
+				resultDisplayed = false;
+			}
 			if (displayArr.includes('.') && input === '.') {
 				return;
 			} else if (input === '.' && displayArr.length === 0) {
@@ -53,6 +60,9 @@ const handleInput = input => {
 			displayArr.push(input);
 			display.innerText = displayArr.join('');
 			break;
+	}
+	if (input != '=') {
+		resultDisplayed = false;
 	}
 };
 

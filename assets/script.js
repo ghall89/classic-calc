@@ -21,20 +21,18 @@ const handleOperator = operator => {
 		formula.push(displayArr.join(''), operator);
 	} else {
 		formula.pop();
+		formula.push(operator);
 	}
 	displayArr = [];
 };
 
 const handleEquation = () => {
-	console.log('handleEquation()', formula, displayArr);
 	if (formula.length === 2 && displayArr.length > 0) {
 		const result = eval(formula.join('') + displayArr.join(''));
 		resultDisplayed = true;
 		display.innerText = result;
 		displayArr = [result];
 		formula = [];
-	} else {
-		console.log('wut?');
 	}
 };
 

@@ -11,24 +11,30 @@ const handleButtonChange = (input, color, textColor) => {
 	button.style.color = textColor;
 };
 
+const clearDisplay = () => {
+	displayArr = [];
+	display.innerText = '0';
+};
+
 const handleOperator = operator => {
-	if (displayArr.length > 0) {
-		formula.push(displayArr.join(''));
+	if (displayArr.length === 1) {
+		formula.push(displayArr.join(''), operator);
 	} else {
 		formula.pop();
 	}
 	displayArr = [];
-	if (operator === '=') {
-		if (formula.length <= 2) {
-			return;
-		}
-		const result = eval(formula.join(''));
+};
+
+const handleEquation = () => {
+	console.log('handleEquation()', formula, displayArr);
+	if (formula.length === 2 && displayArr.length > 0) {
+		const result = eval(formula.join('') + displayArr.join(''));
 		resultDisplayed = true;
 		display.innerText = result;
 		displayArr = [result];
 		formula = [];
 	} else {
-		formula.push(operator);
+		console.log('wut?');
 	}
 };
 
@@ -36,10 +42,11 @@ const handleInput = input => {
 	switch (input) {
 		case 'C':
 			formula = [];
-			displayArr = [];
-			display.innerText = '0';
+			clearDisplay();
 			break;
 		case '=':
+			handleEquation();
+			break;
 		case '+':
 		case '-':
 		case '*':
@@ -48,8 +55,7 @@ const handleInput = input => {
 			break;
 		default:
 			if (resultDisplayed) {
-				displayArr = [];
-				display.innerText = '0';
+				clearDisplay();
 				resultDisplayed = false;
 			}
 			if (displayArr.includes('.') && input === '.') {
@@ -95,21 +101,18 @@ document.addEventListener('keydown', e => {
 				keyId = e.key;
 				handleInput(e.key);
 				handleButtonChange(keyId, 'black', 'white');
-
 				break;
 			case 'Backspace':
 				keyPressed = true;
 				handleInput('C');
 				keyId = 'c';
 				handleButtonChange(keyId, 'black', 'white');
-
 				break;
 			case 'Enter':
 				keyPressed = true;
 				handleInput('=');
 				keyId = '=';
 				handleButtonChange(keyId, 'black', 'white');
-
 				break;
 			default:
 				break;

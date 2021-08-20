@@ -6,6 +6,8 @@
 
 A simple calculator, based on the calculator desk accessory from classic Mac OS. Built with Electron and written in JavaScript, HTML, and CSS.
 
+![](./screenshot.png)
+
 ## Build
 
 _Note: This project is only set up to compile for MacOS. If you want to compile for Windows or Linux you'll have to make the necessary modifications._
@@ -16,4 +18,4 @@ _Note: This project is only set up to compile for MacOS. If you want to compile 
 
 ## Compiled
 
-[Releases](https://github.com/ghall89/js-calc/releases/tag/v0.0.1)
+[Releases](https://github.com/ghall89/js-calc/releases)

@@ -17,7 +17,7 @@ const clearDisplay = () => {
 };
 
 const handleOperator = operator => {
-	if (displayArr.length === 1) {
+	if (displayArr.length >= 1) {
 		formula.push(displayArr.join(''), operator);
 	} else {
 		formula.pop();
@@ -37,6 +37,8 @@ const handleEquation = () => {
 };
 
 const handleInput = input => {
+	console.log(formula.join(' '));
+	console.log(displayArr.join(''));
 	switch (input) {
 		case 'C':
 			formula = [];

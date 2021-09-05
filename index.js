@@ -24,6 +24,7 @@ function createWindow() {
 		},
 		titleBarStyle: 'hiddenInset',
 		resizable: false,
+		vibrancy: 'dark',
 		fullscreenable: false
 	});
 

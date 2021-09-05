@@ -30,7 +30,7 @@ const handleEquation = () => {
 	if (formula.length === 2 && displayArr.length > 0) {
 		const result = eval(formula.join('') + displayArr.join(''));
 		resultDisplayed = true;
-		display.innerText = result;
+		display.innerText = Math.round(result * 500) / 500;
 		displayArr = [result];
 		formula = [];
 	}

@@ -11,6 +11,8 @@
 		D33210232A2790A500607F04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33210222A2790A500607F04 /* ContentView.swift */; };
 		D33210252A2790A700607F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33210242A2790A700607F04 /* Assets.xcassets */; };
 		D33210282A2790A700607F04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33210272A2790A700607F04 /* Preview Assets.xcassets */; };
+		D33210302A27916000607F04 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = D332102F2A27916000607F04 /* AppIcon.appiconset */; };
+		D3C03A4D2A2BF7B000AF6893 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C03A4C2A2BF7B000AF6893 /* AppLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		D33210242A2790A700607F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33210272A2790A700607F04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D33210292A2790A700607F04 /* Classic_Calc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Classic_Calc.entitlements; sourceTree = "<group>"; };
+		D332102F2A27916000607F04 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		D3C03A4C2A2BF7B000AF6893 /* AppLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 			children = (
 				D33210202A2790A500607F04 /* Classic_CalcApp.swift */,
 				D33210222A2790A500607F04 /* ContentView.swift */,
+				D332102F2A27916000607F04 /* AppIcon.appiconset */,
 				D33210242A2790A700607F04 /* Assets.xcassets */,
 				D33210292A2790A700607F04 /* Classic_Calc.entitlements */,
 				D33210262A2790A700607F04 /* Preview Content */,
+				D3C03A4C2A2BF7B000AF6893 /* AppLogic.swift */,
 			);
 			path = "Classic Calc";
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33210282A2790A700607F04 /* Preview Assets.xcassets in Resources */,
+				D33210302A27916000607F04 /* AppIcon.appiconset in Resources */,
 				D33210252A2790A700607F04 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C03A4D2A2BF7B000AF6893 /* AppLogic.swift in Sources */,
 				D33210232A2790A500607F04 /* ContentView.swift in Sources */,
 				D33210212A2790A500607F04 /* Classic_CalcApp.swift in Sources */,
 			);
@@ -274,12 +282,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Classic Calc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghalldev.Classic-Calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -301,12 +312,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Classic Calc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghalldev.Classic-Calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

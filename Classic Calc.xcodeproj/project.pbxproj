@@ -12,6 +12,7 @@
 		D33210252A2790A700607F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33210242A2790A700607F04 /* Assets.xcassets */; };
 		D33210282A2790A700607F04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33210272A2790A700607F04 /* Preview Assets.xcassets */; };
 		D33210302A27916000607F04 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = D332102F2A27916000607F04 /* AppIcon.appiconset */; };
+		D33D24C22A2CEC89003E9DC4 /* MathParser in Frameworks */ = {isa = PBXBuildFile; productRef = D33D24C12A2CEC89003E9DC4 /* MathParser */; };
 		D3C03A4D2A2BF7B000AF6893 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C03A4C2A2BF7B000AF6893 /* AppLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		D33210272A2790A700607F04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D33210292A2790A700607F04 /* Classic_Calc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Classic_Calc.entitlements; sourceTree = "<group>"; };
 		D332102F2A27916000607F04 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		D33D24C32A2CECA9003E9DC4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3C03A4C2A2BF7B000AF6893 /* AppLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33D24C22A2CEC89003E9DC4 /* MathParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 		D33210142A2790A500607F04 = {
 			isa = PBXGroup;
 			children = (
+				D33D24C32A2CECA9003E9DC4 /* README.md */,
 				D332101F2A2790A500607F04 /* Classic Calc */,
 				D332101E2A2790A500607F04 /* Products */,
 			);
@@ -91,6 +95,9 @@
 			dependencies = (
 			);
 			name = "Classic Calc";
+			packageProductDependencies = (
+				D33D24C12A2CEC89003E9DC4 /* MathParser */,
+			);
 			productName = "Classic Calc";
 			productReference = D332101D2A2790A500607F04 /* Classic Calc.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +126,9 @@
 				Base,
 			);
 			mainGroup = D33210142A2790A500607F04;
+			packageReferences = (
+				D33D24C02A2CEC89003E9DC4 /* XCRemoteSwiftPackageReference "swift-math-parser" */,
+			);
 			productRefGroup = D332101E2A2790A500607F04 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D33D24C02A2CEC89003E9DC4 /* XCRemoteSwiftPackageReference "swift-math-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bradhowes/swift-math-parser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D33D24C12A2CEC89003E9DC4 /* MathParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D33D24C02A2CEC89003E9DC4 /* XCRemoteSwiftPackageReference "swift-math-parser" */;
+			productName = MathParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D33210152A2790A500607F04 /* Project object */;
 }
